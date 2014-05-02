@@ -9,3 +9,7 @@ POST /person -> create
 // Do this for place and date as well?
 
 /person/id/conclusion-type/why-type -> mount why scoped to person and conclusion
+
+GET /person/id/conclusion -> return all conclusions
+
+GET /person/id/why -> return all whys

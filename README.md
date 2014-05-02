@@ -7,6 +7,8 @@ A Genealogical API built on vGraph, dCap, pTree, and nPipes
 
 The standard layout is `/type/id/type-specific/stuff`
 
+The Server will only return JSON.
+
 ### Special Types
 
 * /why (Generic Read Only Accessor)
