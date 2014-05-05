@@ -1,4 +1,4 @@
-# POST /gender
+# POST /graph/gender
 Create and associate a gender with a person
 
 ## URL Parameters

@@ -1,11 +1,12 @@
-# GET /graph/gender/{id}
-Get the gender associated with a person
+# GET /
+Return trepo status information
 
 ## URL Parameters
 
-* `id` - The gender-id.
+`None`
 
 ## Request
+
 **Headers**
 
 * Content-Type: application/json
@@ -20,21 +21,22 @@ Get the gender associated with a person
 
 ## Validation
 
-* If gender node does not exist, `404`
+`None`
 
 ## Graph Operations
 
 `None`
 
 ## Response
+
 **Headers**
 
 * Status: 200
 
 **Body**
+
 ````javascript
 {
-  "gender_id": "The ID of the created gender node",
-  "value" : "The gender value"
+  "version": "0.1.0"
 }
 ````

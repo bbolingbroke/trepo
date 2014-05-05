@@ -1,4 +1,4 @@
-# POST /gender/{id}
+# POST /graph/gender/{id}
 Update the gender
 
 ## URL Parameters

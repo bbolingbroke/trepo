@@ -1,4 +1,4 @@
-# DELETE /gender/{id}
+# DELETE /graph/gender/{id}
 Get the gender associated with a person
 
 ## URL Parameters

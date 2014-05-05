@@ -1,4 +1,4 @@
-# GET /person/{id}/gender
+# GET /graph/person/{id}/gender
 Get the gender associated with a person
 
 ## URL Parameters

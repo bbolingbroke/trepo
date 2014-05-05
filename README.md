@@ -1,64 +1,64 @@
 # Trepo
-A Genealogical API built on vGraph, dCap, pTree, and nPipes
+A Genealogical API built on [vGraph](https://github.com/trepo/vgraph), [dCap](https://github.com/trepo/dcap), [pTree](https://github.com/trepo/ptree), and [nPipes](https://github.com/trepo/npipes).
 
 ![](img/stack.png)
 
-# REST-ish
+## Versioning
 
-The standard layout is `/type/id/type-specific/stuff`
+**Current Version** // TODO
 
-The Server will only return JSON.
+We use [semver](http://semver.org/) versioning via the `Accept-Version` header.
 
-### Special Types
+[spec](spec/versioning.md)
 
-* /why (Generic Read Only Accessor)
-* /person (Where most of the action happens)
-* /conclusion (Generic Read Only Accessor)
-* /date
-* /place
-* /node (Raw Access to Nodes)
-* /edge (Raw Access to Edges)
-* /commit (Commit related things)
-* /patch (Patch that Graph)
-* // TODO other system stuff
+## REST-ish
+Yup. Deal with it. [Read more](http://en.wikipedia.org/wiki/Representational_state_transfer).
 
-### Known Why Types
+## JSON
+Its the only music we ever play.
+Don't know about JSON? [Read about it here](http://www.json.org/).
+And yes, [JSONP](http://en.wikipedia.org/wiki/JSONP) is supported.
+// TODO [maybe put meta info in the callback](https://developer.github.com/v3/#json-p-callbacks)? 
 
-* /note
+This means no XML. Welcome to the 21st century.
 
-### Known Conclusion Types
+## Auth
+Standard token based authentication in the header. 
 
-* /birth
-* /marriage
-* /gender
-* // TODO finish this based on pTree
+[spec](spec/auth.md)
 
-### Unknown Types
-Unknown What types are handled by asking for the raw nodes and edges, or by going through /conclusion
-Unknown Why types can also be accessed via raw node and edges, or by going through /why
+## Rate Limiting
+// TODO
 
-# Modules
+# API Sections
 
-### Requirements
-Each module must:
+## Info
+Mounted at `/`, this provides version information.
 
-* Match the conclusion or why spec
-* Have test case coverage
-* Match its pTree spec
+[spec](spec/root.md)
 
-### Mounting
+## Graph
+Mounted at `/graph`, this provides access to the underlying local pTree implementation and provides read, write, update, and delete operations.
 
-Mount up new conclusion at:
+[spec](spec/graph)
 
-* /new-conclusion
-* /person/id/new-conclusion (Up to conclusion module to accept or reject)
-* /place/id/new-conclusion (new-conclusion can throw 404 if not applicable (gender module))
-* /date/id/new-conclusion
+## Query
+Mounted at `/query`, this provides generalized access to pTree, and utilizes nPipes to perform queries across various repositories. It exposes things like generational, family, and validation queries.
 
-Mount up new why at:
+[spec](spec/query)
 
-* /new-why
-* /person/id/new-why (Up to conclusion module to accept or reject)
-* /conclusion-type/id/new-why (new-conclusion can throw 404 if not applicable (gender module))
+## Search
+// TODO combine with Query?
+Mounted at `/search`, this provides search functionality across pTree, such as place, surname, and other searches.
 
-Need to have a list of registered labels, and what they are (system, conclusion, or why) and route based off of that.
+[spec](spec/search)
+
+## Commit
+Mounted at `/commit`, this provides commit related functionality such as manual commits, commit history, and commit searching.
+
+[spec](spec/commit)
+
+## Patch
+Mounted at `/patch`, this provides the ability to patch vGraph with commits.
+
+[spec](spec/patch)
