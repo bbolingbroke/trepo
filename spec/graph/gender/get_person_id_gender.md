@@ -8,7 +8,7 @@ Get the gender associated with a person
 ## Request
 **Headers**
 
-* Content-Type: application/json
+`None`
 
 **Query Parameters**
 

@@ -5,11 +5,11 @@ A Representation of a marriage. See the [pTree Spec](https://github.com/genealog
 
 * [POST /graph/marriage](post_marriage.md) - Create a marriage
 * [GET /graph/marriage/{mid}](get_marriage_mid.md) - Get a marriage
-* [DELETE /graph/marriage/{mid}](delete_marriage_id.md) - Remove a marriage
+* [DELETE /graph/marriage/{mid}](delete_marriage_mid.md) - Remove a marriage
 
 * [GET /graph/marriage/{mid}/spouse](get_marriage_mid_spouse.md) - Get a marriage
 * [POST /graph/marriage/{mid}/spouse](post_marriage_mid_spouse.md) - Associate a spouse
-* [DELETE /graph/marriage/{mid}/spouse/{sid}](delete_marriage_mid_spouse_sid.md) - Disassociate a spouse
+* [DELETE /graph/marriage/{mid}/spouse/{pid}](delete_marriage_mid_spouse_pid.md) - Disassociate a spouse
 
 * [GET /graph/marriage/{mid}/place](get_marriage_mid_place.md) - Get the marriage place
 * [POST /graph/marriage/{mid}/place](post_marriage_mid_place.md) - Add or Update the marriage place?
